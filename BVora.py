@@ -1,7 +1,14 @@
-from time import sleep
-a = open(input("archivo"), "r")
-b = compile(a.read(), "BV", "exec")
+import matplotlib.pyplot as mp
+import numpy as np
+import time as tm
+import pygame as pg
+import tkinter as tk
+import maths as mt
+import os
+import random as rd
+with open(input("archivo"), "r") as a
+with compile(a.read(), "BV", "exec") as b
 exec(b)
-c = open("endtext.bvm", "r")
+with open("endtext.bvm", "r") as c
 print(c.read())
-sleep(3)
+tm.sleep(3)
