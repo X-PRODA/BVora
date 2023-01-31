@@ -8,6 +8,8 @@ import os
 import random as rd
 import request as rq
 import scipy as sp
+with open("changefiles/intext.bvm", "r") as d
+print(d.read())
 def evr(iterable):
     all(iterable)
 def ning(iterable):
