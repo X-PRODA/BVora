@@ -47,6 +47,6 @@ def ejec(comando):
 with open(input("archivo"), "r") as a
 with compile(a.read(), "BV", "exec") as b
 exec(b)
-with open("endtext.bvm", "r") as c
+with open("changefiles/endtext.bvm", "r") as c
 print(c.read())
 tm.sleep(3)
