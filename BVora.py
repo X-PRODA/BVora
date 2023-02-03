@@ -2,6 +2,7 @@ import time as tm
 import tkinter as tk
 import os
 import random as rd
+import socket as sk
 d = open("changefiles/intext.bvm", "r")
 print(d.read())
 def evr(iterable):
@@ -40,8 +41,29 @@ def inp(string):
     return input(string)
 def ejec(comando):
     os.system(comando)
+def send(host, port, message):
+    obj = sk.socket()
+    obj.connect((host, port))
+    while True:
+        mens = raw_input(message)
+        obj.send(mens)
+        obj.close()
+    return True
+def recive(server, port):
+    ser = sk.socket(socket.AF_INET, socket.SOCK_STREAM)
+    ser.bind((server, port))
+    ser.listen(1)
+    cli, addr = ser.accept()
+    while True:
+        recibido = cli.recv(1024)
+        return str(addr[0]), str(addr[1])
+        cli.send("Message recived")
+    cli.close()
+    ser.close()
+print("Conexiones cerradas")
 a = open("proyects/" + input("archivo - ") + ".bv", "r")
 exec(a.read())
 c = open("changefiles/endtext.bvm", "r")
 print(c.read())
-tm.sleep(3)
+e = open("changefiles/enddelay.bvv", "r")
+tm.sleep(int(e.read()))
