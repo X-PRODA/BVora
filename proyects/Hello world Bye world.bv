@@ -1,0 +1,4 @@
+print("Hello world")
+tm.sleep(3)
+print("Bye world")
+tm.sleep(3)
